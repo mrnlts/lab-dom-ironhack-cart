@@ -10,12 +10,12 @@ function updateSubtotal(elem) {
 
 function calculateAll() {
   // ITERATION 2
-  const products = document.getElementsByClassName('product');
-  const productsArray = [...products];
-  productsArray.forEach((elem) => updateSubtotal(elem));
+  const productsArray = [...document.getElementsByClassName('product')].forEach((elem) => updateSubtotal(elem));
 
   // ITERATION 3
-  //... your code goes here
+  // const finalValue = [...document.getElementsByClassName('product')].reduce(function(acc, current) {return acc + current});
+  const finalValue = [...document.getElementsByClassName('subtotal')].reduce(function (acc, curr) {let result = acc + curr; return result;});
+  document.getElementById('total-value').innerHTML = `$${finalValue}`;
 }
 
 // ITERATION 4
